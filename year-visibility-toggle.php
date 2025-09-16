@@ -3,7 +3,7 @@
  * Plugin Name: Year Visibility Toggle
  * Description: Show/hide elements by year (2024–2027). Supports override via ?aep=YYYY. Elementor editor shows all with colored border.
  * Version: 1.9.3
- * Author: Your Name
+ * Author: Juan José Zermeño
  */
 
 if (!defined('ABSPATH')) exit;
@@ -164,7 +164,7 @@ class Year_Visibility_Toggle {
             echo "<style id='yvt-style-editor'>\n";
             foreach ($this->years as $y) {
                 $color = esc_html($styles[$y] ?? '#ff0000');
-                echo ".year-{$y} { display: initial !important; border: 1px dashed {$color} !important; padding: 0; position: relative; }\n";
+                echo ".year-{$y} { border: 1px dashed {$color} !important; padding: 0; position: relative; }\n";
                 echo ".year-{$y}:hover::after { content: '{$y}'; position: absolute; top: -25px; right: 0; background: {$color}; color: white; font-size: 10px; padding: 4px; }\n";
             }
             echo "</style>\n";
